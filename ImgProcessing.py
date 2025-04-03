@@ -384,6 +384,10 @@ def liveDynamic():
 
 def main():
     st.title("OpenCV Counting Multiple Objects Using Image Processing in Streamlit")
+
+    # Load and display an image 
+    st.image("coin.jpg", caption="Coin Objects", use_column_width=True)
+
     operation_type = st.sidebar.selectbox(
         "Choose an Operation:",
         (
