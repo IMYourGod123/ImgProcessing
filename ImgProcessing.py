@@ -395,10 +395,10 @@ def main():
     st.image("sugar2.jpg", caption="Sugar Objects", use_container_width=True)  # Updated parameter
 
     # Load and display an image
-    st.image("sugar1.jpg", caption="Sugar Objects", use_container_width=True)  # Updated parameter
+    st.image("sugar1.jpeg", caption="Sugar Objects", use_container_width=True)  # Updated parameter
 
     # Load and display an image
-    st.image("sos2.jpg", caption="Sos Objects", use_container_width=True)  # Updated parameter
+    st.image("sos2.jpeg", caption="Sos Objects", use_container_width=True)  # Updated parameter
 
     # Load and display an image
     st.image("screw3.jpg", caption="Screw Objects", use_container_width=True)  # Updated parameter
@@ -410,7 +410,7 @@ def main():
     st.image("screw.jpg", caption="Screw Objects", use_container_width=True)  # Updated parameter
 
     # Load and display an image
-    st.image("moyu1.jpg", caption="Moyu Objects", use_container_width=True)  # Updated parameter
+    st.image("moyu1.jpeg", caption="Moyu Objects", use_container_width=True)  # Updated parameter
 
     operation_type = st.sidebar.selectbox(
         "Choose an Operation:",
