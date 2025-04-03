@@ -383,7 +383,7 @@ def liveDynamic():
         cv2.destroyAllWindows()
 
 def main():
-    st.title("OpenCV Counting Multiple Objects Using Image Processing in Streamlit")
+    st.title("OpenCV Multiple Objects Counting Using Image Processing")
 
     # Load and display an image
     st.image("demo.png", caption="Detection Objects", use_container_width=True)  # Updated parameter
