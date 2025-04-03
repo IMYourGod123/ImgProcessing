@@ -4,18 +4,9 @@ import numpy as np
 import random
 import matplotlib.pyplot as plt
 from io import BytesIO
-import os
 
 # Global variable for minimum area in rectangle detection
 min_area = 1000
-
-# Define the directory containing demo images
-DEMO_IMAGE_DIR = "demo_images"  # Create a folder named 'demo_images' in the same directory as your script
-DEMO_IMAGES = [f for f in os.listdir(DEMO_IMAGE_DIR) if os.path.isfile(os.path.join(DEMO_IMAGE_DIR, f)) and f.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', '.tiff'))]
-DEMO_IMAGES.sort() # Sort the demo images for better presentation
-
-def load_image(path):
-    return cv2.imread(path)
 
 def upload_image():
     uploaded_file = st.file_uploader("Upload an Image", type=["jpg", "jpeg", "png", "bmp", "tiff"])
@@ -292,7 +283,8 @@ def process_dynamicImage(image):
     ax.set_title("Dynamic Object Classification")
     st.pyplot(fig)
 
-def dynamicDetection(image):
+def dynamicDetection():
+    image = upload_image()
     process_dynamicImage(image)
 
 stable_colors = [
@@ -391,7 +383,7 @@ def liveDynamic():
         cv2.destroyAllWindows()
 
 def main():
-    st.title("OpenCV Operations in Streamlit")
+    st.title("OpenCV Counting Multiple Objects Using Image Processing in Streamlit")
     operation_type = st.sidebar.selectbox(
         "Choose an Operation:",
         (
@@ -405,57 +397,31 @@ def main():
         ),
     )
 
-    st.sidebar.subheader("Load Demo Image")
-    demo_image_option = st.sidebar.selectbox("Choose a demo image (optional):", ["None"] + DEMO_IMAGES)
-
-    image = None
-    if demo_image_option != "None":
-        image_path = os.path.join(DEMO_IMAGE_DIR, demo_image_option)
-        image = load_image(image_path)
-        if image is not None:
-            st.sidebar.image(image, caption=f"Demo Image: {demo_image_option}", width=150)
-    else:
-        st.sidebar.subheader("Upload Your Own Image")
-        image = upload_image()
-
     if operation_type == "Upload Image for Coin Counting":
+        image = upload_image()
         if image is not None:
             upload_image_coin_counting(image)
-        elif demo_image_option == "None" and operation_type == "Upload Image for Coin Counting":
-            st.info("Please upload an image or select a demo image.")
 
     elif operation_type == "Upload Image for Rectangle Detection":
+        image = upload_image()
         if image is not None:
             min_area = st.sidebar.slider("Minimum Area for Rectangles", 100, 10000, 1000)
             upload_image_rectangle_detection(image, min_area)
-        elif demo_image_option == "None" and operation_type == "Upload Image for Rectangle Detection":
-            st.info("Please upload an image or select a demo image.")
 
     elif operation_type == "Live Detection of Rectangles (Webcam)":
         live_rectangle_detection()
 
     elif operation_type == "Upload Image for Object Detection":
+        image = upload_image()
         if image is not None:
             st.subheader("Object Detection")
             count_manyObjects(image)
-        elif demo_image_option == "None" and operation_type == "Upload Image for Object Detection":
-            st.info("Please upload an image or select a demo image.")
 
     elif operation_type == "Upload Image for Dynamic Shape Classification":
-        if image is not None:
-            dynamicDetection(image)
-        elif demo_image_option == "None" and operation_type == "Upload Image for Dynamic Shape Classification":
-            st.info("Please upload an image or select a demo image.")
+        dynamicDetection()
 
     elif operation_type == "Live Detection of Dynamic Shapes (Webcam)":
         liveDynamic()
-    elif operation_type == "Select an option":
-        st.info("Please select an operation from the dropdown.")
 
 if __name__ == "__main__":
-    # Create the demo_images directory if it doesn't exist
-    if not os.path.exists(DEMO_IMAGE_DIR):
-        os.makedirs(DEMO_IMAGE_DIR)
-        st.warning(f"Created directory '{DEMO_IMAGE_DIR}'. Please add some demo images to this folder.")
-
     main()
