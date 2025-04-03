@@ -385,8 +385,32 @@ def liveDynamic():
 def main():
     st.title("OpenCV Counting Multiple Objects Using Image Processing in Streamlit")
 
-    # Load and display an image 
-    st.image("coin.jpg", caption="Coin Objects", use_column_width=True)
+    # Load and display an image
+    st.image("coin.jpg", caption="Coin Objects", use_container_width=True)  # Updated parameter
+
+    # Load and display an image
+    st.image("dice.jpg", caption="Dice Objects", use_container_width=True)  # Updated parameter
+
+    # Load and display an image
+    st.image("sugar2.jpg", caption="Sugar Objects", use_container_width=True)  # Updated parameter
+
+    # Load and display an image
+    st.image("sugar1.jpg", caption="Sugar Objects", use_container_width=True)  # Updated parameter
+
+    # Load and display an image
+    st.image("sos2.jpg", caption="Sos Objects", use_container_width=True)  # Updated parameter
+
+    # Load and display an image
+    st.image("screw3.jpg", caption="Screw Objects", use_container_width=True)  # Updated parameter
+
+    # Load and display an image
+    st.image("screw2.jpg", caption="Screw Objects", use_container_width=True)  # Updated parameter
+
+    # Load and display an image
+    st.image("screw.jpg", caption="Screw Objects", use_container_width=True)  # Updated parameter
+
+    # Load and display an image
+    st.image("moyu1.jpg", caption="Moyu Objects", use_container_width=True)  # Updated parameter
 
     operation_type = st.sidebar.selectbox(
         "Choose an Operation:",
