@@ -386,31 +386,7 @@ def main():
     st.title("OpenCV Counting Multiple Objects Using Image Processing in Streamlit")
 
     # Load and display an image
-    st.image("coin.jpg", caption="Coin Objects", use_container_width=True)  # Updated parameter
-
-    # Load and display an image
-    st.image("dice.jpg", caption="Dice Objects", use_container_width=True)  # Updated parameter
-
-    # Load and display an image
-    st.image("sugar2.jpg", caption="Sugar Objects", use_container_width=True)  # Updated parameter
-
-    # Load and display an image
-    st.image("sugar1.jpeg", caption="Sugar Objects", use_container_width=True)  # Updated parameter
-
-    # Load and display an image
-    st.image("sos2.jpeg", caption="Sos Objects", use_container_width=True)  # Updated parameter
-
-    # Load and display an image
-    st.image("screw3.jpg", caption="Screw Objects", use_container_width=True)  # Updated parameter
-
-    # Load and display an image
-    st.image("screw2.jpg", caption="Screw Objects", use_container_width=True)  # Updated parameter
-
-    # Load and display an image
-    st.image("screw.jpg", caption="Screw Objects", use_container_width=True)  # Updated parameter
-
-    # Load and display an image
-    st.image("moyu1.jpeg", caption="Moyu Objects", use_container_width=True)  # Updated parameter
+    st.image("demo.png", caption="Detection Objects", use_container_width=True)  # Updated parameter
 
     operation_type = st.sidebar.selectbox(
         "Choose an Operation:",
