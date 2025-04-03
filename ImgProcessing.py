@@ -383,7 +383,7 @@ def liveDynamic():
         cv2.destroyAllWindows()
 
 def main():
-    st.title("OpenCV Operations in Streamlit")
+    st.title("OpenCV Counting Multiple Objects Using Image Processing in Streamlit")
     operation_type = st.sidebar.selectbox(
         "Choose an Operation:",
         (
