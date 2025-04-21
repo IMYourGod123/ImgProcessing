@@ -5,7 +5,7 @@ from PIL import Image
 
 # Language dictionary
 translations = {
-    "en": {
+    "English": {
         "title": "OpenCV Multiple Objects Counting Using Image Processing",
         "choose_operation": "Choose an Operation:",
         "upload_image_rectangle": "Upload Image - Rectangle Detection",
@@ -19,7 +19,7 @@ translations = {
         "image_caption": "Detection Objects",
         "select_option": "Select an option"
     },
-    "zh": {
+    "Chinese": {
         "title": "使用图像处理的OpenCV多对象计数",
         "choose_operation": "选择操作：",
         "upload_image_rectangle": "上传图像 - 矩形检测",
